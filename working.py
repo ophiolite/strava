@@ -1,4 +1,5 @@
 from stravalib.client import Client
+import requests
 
 # Authentication Steps:
 client = Client()
@@ -8,7 +9,7 @@ authorize_url = client.authorization_url(client_id=1234, redirect_uri='http://lo
 
 ## My clientid = 12454
 # Extract the code from your webapp response
-code = request.get('code') # or whatever your framework does
+code = requests.get('code') # or whatever your framework does
 access_token = client.exchange_code_for_token(client_id=12454, client_secret=STRAVA_KEY, code=code)
 
 # Now store that access token somewhere (a database?)
